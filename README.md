@@ -96,6 +96,18 @@ Documentation can be read in two formats\_ _markdown_ & _blog post_.
 **Linting** - [ESLint](https://eslint.org)  
 **Dynamic OG images** - [Satori](https://github.com/vercel/satori) + [Sharp](https://sharp.pixelplumbing.com/) + [Astro Fonts](https://docs.astro.build/en/guides/fonts/)
 
+## 🚀 Deploying to Netlify
+
+This repository includes a `netlify.toml` with the production build command,
+publish directory, and required Node.js version. To deploy, push the project to
+a GitHub repository you own, then import that repository in Netlify. Netlify
+will build the site on each deployment. The site's canonical URL is taken from
+Netlify's `URL` environment variable during deployment, with the configured
+domain used for local builds.
+
+Before pushing, check `git remote -v` and make sure `origin` points to your
+repository, not the original AstroPaper repository.
+
 ## 👨🏻‍💻 Running Locally
 
 You can start using this project locally by running the following command in your desired directory:

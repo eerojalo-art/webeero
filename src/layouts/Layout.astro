@@ -1,5 +1,4 @@
 ---
-import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { resolveDefaultOgImagePath } from "@/utils/resolveDefaultOgImagePath";
@@ -35,6 +34,7 @@ const rssHref = getRelativeLocaleUrl(
   dir={site.dir ?? "ltr"}
   lang={Astro.currentLocale ?? site.lang}
   class="overflow-y-scroll scroll-smooth"
+  data-theme="dark"
 >
   <head>
     <meta charset="UTF-8" />
@@ -44,10 +44,11 @@ const rssHref = getRelativeLocaleUrl(
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Font -->
-    <Font
-      cssVariable="--font-google-sans-code"
-      preload={[{ subset: "latin", weight: 400, style: "normal" }]}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
     />
 
     <!-- Primary meta -->
@@ -102,10 +103,7 @@ const rssHref = getRelativeLocaleUrl(
     <script is:inline>
       (function () {
         const stored = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        const theme = stored ?? (prefersDark ? "dark" : "light");
+        const theme = stored ?? "dark";
         const root = document.firstElementChild;
         root?.setAttribute("data-theme", theme);
         root?.classList.toggle("dark", theme === "dark");
@@ -115,11 +113,24 @@ const rssHref = getRelativeLocaleUrl(
     </script>
 
     <ClientRouter />
+    <script
+      is:inline
+      src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+      defer></script>
   </head>
   <body
     class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"
   >
     <slot />
+    <script is:inline>
+      function renderLucideIcons() {
+        if (window.lucide) window.lucide.createIcons();
+      }
+      document.addEventListener("DOMContentLoaded", renderLucideIcons, {
+        once: true,
+      });
+      document.addEventListener("astro:page-load", renderLucideIcons);
+    </script>
     <script>
       import "@/scripts/theme";
     </script>

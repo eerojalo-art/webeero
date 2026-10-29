@@ -1,28 +1,40 @@
 ---
-import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+import eeroPhoto from "@/assets/images/eero-jalo.png";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Socials from "@/components/Socials.astro";
-import Card from "@/components/Card.astro";
 import LinkButton from "@/components/LinkButton.astro";
-import { getSortedPosts } from "@/utils/getSortedPosts";
-import { useTranslations } from "@/i18n";
 import config from "@/config";
 
-const { socials, posts: postsConfig } = config;
-
+const { socials } = config;
 const locale = Astro.currentLocale ?? config.site.lang;
-const t = useTranslations(locale);
-
-const posts = await getCollection("posts");
-const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
-const homePath = getRelativeLocaleUrl(locale, "");
+const work = [
+  {
+    name: "Project ACUMEN",
+    category: "Applied AI & Digital Twins",
+    description:
+      "AI-enabled traffic optimization using a digital twin approach, bringing together operational data and aerial telemetry to support better decisions.",
+    tags: ["AI", "Traffic optimization", "Aerial telemetry"],
+  },
+  {
+    name: "Project SEDIMARK",
+    category: "Data Platforms & Smart Infrastructure",
+    description:
+      "A decentralized data marketplace focused on trusted data sharing and enabling organizations to create value across data spaces.",
+    tags: ["Data spaces", "Data marketplace", "Interoperability"],
+  },
+  {
+    name: "UrbanSense & 6Aika",
+    category: "Smart Infrastructure",
+    description:
+      "An Azure-based smart city data platform and 5G open testbed connecting cities, companies, and research organizations.",
+    tags: ["Azure", "Smart cities", "Open testbed"],
+  },
+];
 ---
 
 <Layout>
@@ -30,98 +42,262 @@ const homePath = getRelativeLocaleUrl(locale, "");
   <main
     id="main-content"
     data-layout="index"
-    data-home-path={homePath}
+    data-home-path={getRelativeLocaleUrl(locale, "")}
     class="app-layout my-1"
   >
-    <section id="hero" class="border-border border-b pt-8 pb-6">
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Mingalaba
-      </h1>
-      <a
-        target="_blank"
-        href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
-        class="inline-block"
-        aria-label="RSS Feed"
-        title="RSS Feed"
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="border-border relative grid overflow-hidden border-b py-16 sm:py-24 md:grid-cols-[1fr_18rem] md:items-center md:gap-10"
+    >
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute -top-32 -right-32 size-96 rounded-full bg-sky-500/10 blur-3xl"
       >
-        <IconRss
-          width={20}
-          height={20}
-          class="stroke-accent scale-125 stroke-3 rtl:-rotate-90"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
-
-      <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
-      </p>
-      <p class="mt-2">
-        Read the blog posts or check{" "}
-        <LinkButton
-          class="hover:text-accent underline decoration-dashed underline-offset-4"
-          href="https://github.com/satnaing/astro-paper#readme"
+      </div>
+      <div class="relative">
+        <p
+          class="mb-5 flex items-center gap-2 text-sm font-semibold tracking-[0.18em] text-sky-400 uppercase"
         >
-          README
-        </LinkButton>{" "}
-        for more info.
-      </p>
-      {
-        socials.length > 0 && (
-          <div class="mt-4 flex max-sm:flex-col sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">
-              {t.home.socialLinks}:
+          <span class="size-2 rounded-full bg-sky-400"></span>
+          Technology & Program Leadership
+        </p>
+        <h1
+          class="max-w-4xl text-4xl leading-tight font-bold tracking-tight sm:text-6xl"
+        >
+          Turning complex technology into <span class="text-sky-400"
+            >measurable impact.</span
+          >
+        </h1>
+        <p
+          class="text-muted-foreground mt-6 max-w-3xl text-lg leading-8 sm:text-xl"
+        >
+          I’m Eero Jalo, a technology and program leader working across applied
+          AI, digital twins, data platforms, and smart infrastructure. I align
+          multidisciplinary teams, partners, and investment around outcomes that
+          make a difference in the real world.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href="#work"
+            class="inline-flex items-center gap-2 rounded-lg bg-sky-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-sky-300"
+          >
+            Explore selected work
+            <IconArrowRight class="size-4" />
+          </a>
+          <a
+            href="mailto:eero.jalo@gmail.com"
+            class="border-border inline-flex items-center gap-2 rounded-lg border px-5 py-3 font-semibold transition hover:border-sky-400 hover:text-sky-300"
+          >
+            Get in touch
+            <span data-lucide="arrow-up-right" class="size-4" aria-hidden="true"
+            ></span>
+          </a>
+        </div>
+        {
+          socials.length > 0 && (
+            <div class="mt-7 flex items-center gap-4">
+              <span class="text-muted-foreground text-sm">Connect</span>
+              <Socials />
             </div>
-            <Socials />
-          </div>
-        )
-      }
+          )
+        }
+      </div>
+      <Image
+        src={eeroPhoto}
+        alt="Portrait of Eero Jalo"
+        widths={[320, 480, 640]}
+        sizes="(min-width: 768px) 18rem, (min-width: 640px) 28rem, calc(100vw - 2rem)"
+        class="border-border relative mx-auto mt-10 aspect-square w-full max-w-72 rounded-2xl border object-cover shadow-2xl shadow-sky-950/30 md:mt-0 md:max-w-none"
+      />
     </section>
 
-    {
-      featuredPosts.length > 0 && (
-        <section
-          id="featured"
-          class:list={[
-            "pt-12 pb-6",
-            { "border-border border-b": recentPosts.length > 0 },
-          ]}
+    <!-- Core Pillars -->
+    <section id="expertise" class="border-border border-b py-14 sm:py-16">
+      <div class="mb-8">
+        <p
+          class="mb-2 text-sm font-semibold tracking-[0.16em] text-sky-400 uppercase"
         >
-          <h2 class="text-2xl font-semibold tracking-wide">
-            {t.home.featured}
-          </h2>
-          <ul>
-            {featuredPosts.map(data => (
-              <Card variant="h3" {...data} />
-            ))}
-          </ul>
-        </section>
-      )
-    }
+          What I do
+        </p>
+        <h2 class="text-3xl font-bold tracking-tight">
+          Where strategy meets delivery
+        </h2>
+      </div>
+      <div class="grid gap-4 md:grid-cols-3">
+        <article class="border-border rounded-xl border bg-white/[0.03] p-6">
+          <span
+            data-lucide="brain-circuit"
+            class="mb-5 size-6 text-sky-400"
+            aria-hidden="true"></span>
+          <h3 class="text-lg font-semibold">Applied AI & Digital Twins</h3>
+          <p class="text-muted-foreground mt-3 leading-7">
+            Translating AI, operational data, and digital twin capabilities into
+            practical solutions for complex environments.
+          </p>
+        </article>
+        <article class="border-border rounded-xl border bg-white/[0.03] p-6">
+          <span
+            data-lucide="network"
+            class="mb-5 size-6 text-sky-400"
+            aria-hidden="true"></span>
+          <h3 class="text-lg font-semibold">
+            Data Platforms & Smart Infrastructure
+          </h3>
+          <p class="text-muted-foreground mt-3 leading-7">
+            Building the partnerships and foundations for data-driven services,
+            decentralized data spaces, and connected infrastructure.
+          </p>
+        </article>
+        <article class="border-border rounded-xl border bg-white/[0.03] p-6">
+          <span
+            data-lucide="workflow"
+            class="mb-5 size-6 text-sky-400"
+            aria-hidden="true"></span>
+          <h3 class="text-lg font-semibold">Technical Program Delivery</h3>
+          <p class="text-muted-foreground mt-3 leading-7">
+            Aligning people, governance, and investment to deliver complex,
+            multi-stakeholder programs from strategy through execution.
+          </p>
+        </article>
+      </div>
+    </section>
 
-    {
-      recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">
-            {t.home.recentPosts}
+    <!-- Selected Work -->
+    <section id="work" class="border-border border-b py-14 sm:py-16">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p
+            class="mb-2 text-sm font-semibold tracking-[0.16em] text-sky-400 uppercase"
+          >
+            Selected initiatives
+          </p>
+          <h2 class="text-3xl font-bold tracking-tight">
+            Technology with real-world purpose
           </h2>
-          <ul>
-            {recentPosts.slice(0, postsConfig.perIndex).map(data => (
-              <Card variant="h3" {...data} />
-            ))}
-          </ul>
-        </section>
-      )
-    }
+        </div>
+        <span class="text-muted-foreground text-sm"
+          >AI · data · infrastructure</span
+        >
+      </div>
+      <div class="grid gap-4 lg:grid-cols-3">
+        {
+          work.map((project, index) => (
+            <article class="border-border flex flex-col rounded-xl border bg-white/[0.03] p-6">
+              <div class="mb-6 flex items-center justify-between">
+                <span class="text-sm font-semibold text-sky-400">
+                  0{index + 1}
+                </span>
+                <span
+                  data-lucide="arrow-up-right"
+                  class="text-muted-foreground size-4"
+                  aria-hidden="true"
+                />
+              </div>
+              <p class="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+                {project.category}
+              </p>
+              <h3 class="mt-2 text-xl font-bold">{project.name}</h3>
+              <p class="text-muted-foreground mt-3 flex-1 leading-7">
+                {project.description}
+              </p>
+              <ul
+                class="mt-6 flex flex-wrap gap-2"
+                aria-label={`${project.name} focus areas`}
+              >
+                {project.tags.map(tag => (
+                  <li class="border-border text-muted-foreground rounded-full border px-3 py-1 text-xs">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </section>
 
-    <div class="my-8 text-center">
-      <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
-        {t.home.allPosts}
-        <IconArrowRight class="inline-block rtl:-rotate-180" />
-      </LinkButton>
-    </div>
+    <!-- Program Delivery -->
+    <section
+      class="border-border grid gap-8 border-b py-14 sm:py-16 md:grid-cols-[1fr_1.2fr]"
+    >
+      <div>
+        <p
+          class="mb-2 text-sm font-semibold tracking-[0.16em] text-sky-400 uppercase"
+        >
+          From vision to execution
+        </p>
+        <h2 class="text-3xl font-bold tracking-tight">
+          Complex programs. Shared outcomes.
+        </h2>
+      </div>
+      <div>
+        <p class="text-muted-foreground leading-7">
+          More than two decades delivering high-availability systems and
+          distributed infrastructure have shaped how I lead: with clear
+          accountability, production-minded execution, and a focus on outcomes.
+          I bring public and private stakeholders together across European and
+          regional innovation programs.
+        </p>
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          <div class="border-border rounded-lg border p-4">
+            <p class="font-semibold">Program governance</p>
+            <p class="text-muted-foreground mt-1 text-sm">
+              Horizon Europe · EAKR · multi-million € budgets
+            </p>
+          </div>
+          <div class="border-border rounded-lg border p-4">
+            <p class="font-semibold">Ways of working</p>
+            <p class="text-muted-foreground mt-1 text-sm">
+              EU projects · PRINCE2 · SAFe · Agile · Lean · PROPS · Scrum
+            </p>
+          </div>
+          <div class="border-border rounded-lg border p-4">
+            <p class="font-semibold">Systems perspective</p>
+            <p class="text-muted-foreground mt-1 text-sm">
+              High availability · distributed edge · telemetry
+            </p>
+          </div>
+          <div class="border-border rounded-lg border p-4">
+            <p class="font-semibold">Languages</p>
+            <p class="text-muted-foreground mt-1 text-sm">
+              Finnish · English · Swedish
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-14 text-center sm:py-16">
+      <p
+        class="mb-2 text-sm font-semibold tracking-[0.16em] text-sky-400 uppercase"
+      >
+        Let’s build what’s next
+      </p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Have a challenge worth solving?
+      </h2>
+      <p class="text-muted-foreground mx-auto mt-4 max-w-2xl leading-7">
+        I’m always interested in ambitious programs at the intersection of AI,
+        data, and infrastructure.
+      </p>
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
+        <a
+          href="mailto:eero.jalo@gmail.com"
+          class="inline-flex items-center gap-2 rounded-lg bg-sky-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-sky-300"
+        >
+          Start a conversation
+          <span data-lucide="mail" class="size-4" aria-hidden="true"></span>
+        </a>
+        <LinkButton
+          href={getRelativeLocaleUrl(locale, "about")}
+          class="border-border rounded-lg border px-5 py-3 font-semibold hover:border-sky-400 hover:text-sky-300"
+        >
+          More about me
+        </LinkButton>
+      </div>
+    </section>
   </main>
   <Footer />
 </Layout>

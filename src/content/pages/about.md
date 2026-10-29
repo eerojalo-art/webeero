@@ -1,37 +1,31 @@
 ---
-title: "About"
-description: "A bit about me and this blog."
+title: "About Eero"
+description: "Technology leadership across applied AI, digital twins, data platforms, and smart infrastructure."
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+I’m Eero Jalo, a technology and program leader focused on turning complex technology into measurable outcomes. My work brings together **applied AI and digital twins**, **data platforms and smart infrastructure**, and **technical program delivery**.
 
-![Astro Paper](@/assets/images/astropaper-og.jpg)
+Over more than two decades, I have worked with high-availability systems, distributed infrastructure, multi-vendor environments, and production telemetry. That experience informs an execution-focused approach: align stakeholders around a clear goal, establish practical governance, and deliver solutions that work in the real world.
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+## Focus areas
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+### Applied AI & Digital Twins
 
-## Features
+Project ACUMEN brings together AI traffic optimization and aerial telemetry through a digital twin approach. I’m interested in making emerging AI capabilities useful in complex operational environments.
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+### Data Platforms & Smart Infrastructure
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+Project SEDIMARK advances decentralized data spaces and data marketplace capabilities. UrbanSense and 6Aika connected smart city data, Azure platforms, and a 5G open testbed.
 
-and so much more.
+### Technical Program Delivery
 
-## Show your support
+I work across organizational and technical boundaries to deliver multi-stakeholder EU projects, including Horizon Europe and EAKR initiatives. My experience includes multi-million-euro budget governance and delivery practices grounded in EU project requirements, PRINCE2, SAFe, Agile, Lean, Ericsson Service & Delivery (PROPS), and Scrum.
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
+## Credentials & languages
 
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
+- **Certifications:** PRINCE2 Foundation, PROPS, SAFe / Agile / Scrum Product Owner, AI Studio
+- **Languages:** Finnish (native), English (fluent), Swedish (good)
 
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
+## Connect
 
-Kyay zuu! 🙏🏼
+For opportunities and collaboration, [connect with me on LinkedIn](https://www.linkedin.com/in/eero-jalo/) or [send me an email](mailto:eero.jalo@gmail.com).

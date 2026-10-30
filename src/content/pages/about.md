@@ -17,6 +17,9 @@ Project ACUMEN brings together AI traffic optimization and aerial telemetry thro
 
 Project SEDIMARK advances decentralized data spaces and data marketplace capabilities. UrbanSense and 6Aika connected smart city data, Azure platforms, and a 5G open testbed.
 
+### Telecom domain
+Technology programs bridging complex network designs with end-to-end execution, system integration, and high-performance evolution for service providers.
+
 ### Technical Program Delivery
 
 I work across organizational and technical boundaries to deliver multi-stakeholder EU projects, including Horizon Europe and EAKR initiatives. My experience includes multi-million-euro budget governance and delivery practices grounded in EU project requirements, PRINCE2, SAFe, Agile, Lean, Ericsson Services & Delivery (PROPS), and Scrum.

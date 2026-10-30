@@ -31,7 +31,11 @@ export default defineAstroPaperConfig({
   },
   socials: [
     { name: "linkedin", url: "https://www.linkedin.com/in/eero-jalo/" },
-    { name: "mail", url: "mailto:eero.jalo@gmail.com" },
+    {
+      name: "mail",
+      url: "https://tally.so/r/OQQp7K",
+      linkTitle: "Open Eero Jalo's contact form",
+    },
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },

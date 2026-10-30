@@ -19,7 +19,7 @@ Project SEDIMARK advances decentralized data spaces and data marketplace capabil
 
 ### Technical Program Delivery
 
-I work across organizational and technical boundaries to deliver multi-stakeholder EU projects, including Horizon Europe and EAKR initiatives. My experience includes multi-million-euro budget governance and delivery practices grounded in EU project requirements, PRINCE2, SAFe, Agile, Lean, Ericsson Service & Delivery (PROPS), and Scrum.
+I work across organizational and technical boundaries to deliver multi-stakeholder EU projects, including Horizon Europe and EAKR initiatives. My experience includes multi-million-euro budget governance and delivery practices grounded in EU project requirements, PRINCE2, SAFe, Agile, Lean, Ericsson Services & Delivery (PROPS), and Scrum.
 
 ## Credentials & languages
 

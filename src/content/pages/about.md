@@ -31,4 +31,4 @@ I work across organizational and technical boundaries to deliver multi-stakehold
 
 ## Connect
 
-For opportunities and collaboration, [connect with me on LinkedIn](https://www.linkedin.com/in/eero-jalo/) or [send me an email](mailto:eero.jalo@gmail.com).
+For opportunities and collaboration, [connect with me on LinkedIn](https://www.linkedin.com/in/eero-jalo/) or [send me a message using my contact form](https://tally.so/r/OQQp7K).

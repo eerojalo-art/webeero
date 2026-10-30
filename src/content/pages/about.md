@@ -26,7 +26,7 @@ I work across organizational and technical boundaries to deliver multi-stakehold
 
 ## Credentials & languages
 
-- **Certifications:** PRINCE2 Foundation, PROPS, SAFe / Agile / Scrum Product Owner, AI Studio
+- **Certifications:** PRINCE2 Foundation, PROPS, SAFe / Agile / Scrum Product Owner, AI tools & bootcamps.
 - **Languages:** Finnish (native), English (fluent), Swedish (good)
 
 ## Connect

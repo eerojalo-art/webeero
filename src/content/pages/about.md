@@ -22,11 +22,11 @@ Technology programs bridging complex network designs with end-to-end execution, 
 
 ### Technical Program Delivery
 
-I work across organizational and technical boundaries to deliver multi-stakeholder EU projects, including Horizon Europe and EAKR initiatives. My experience includes multi-million-euro budget governance and delivery practices grounded in EU project requirements, PRINCE2, SAFe, Agile, Lean, Ericsson Services & Delivery (PROPS), and Scrum.
+I work across organizational and technical boundaries to deliver complex, multi-stakeholder initiatives and programs. My experience includes multi-million-euro budget governance and robust delivery practices grounded in both agile and traditional project management frameworks.
 
 ## Credentials & languages
 
-- **Certifications:** PRINCE2 Foundation, PROPS, SAFe / Agile / Scrum Product Owner, AI tools & bootcamps.
+- **Certifications:** PRINCE2 Foundation, PROPS. Experience: SAFe / Agile / Scrum Product Owner, AI tools & bootcamps.
 - **Languages:** Finnish (native), English (fluent), Swedish (good)
 
 ## Connect

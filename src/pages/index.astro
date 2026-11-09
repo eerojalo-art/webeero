@@ -12,6 +12,21 @@ import config from "@/config";
 
 const { socials } = config;
 const locale = Astro.currentLocale ?? config.site.lang;
+const personStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: config.site.author,
+  url: config.site.url,
+  jobTitle: "Technology and program leader",
+  knowsAbout: [
+    "Applied AI",
+    "Digital twins",
+    "Data platforms",
+    "Smart infrastructure",
+    "Technical program delivery",
+  ],
+  ...(config.site.profile && { sameAs: [config.site.profile] }),
+};
 const work = [
   {
     name: "Project ACUMEN",
@@ -37,7 +52,17 @@ const work = [
 ];
 ---
 
-<Layout>
+<Layout
+  title="Eero Jalo | AI, Data & Technology Programs"
+  description="Technology and program leader delivering applied AI, digital twins, data platforms, and smart infrastructure initiatives from strategy to measurable outcomes."
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(personStructuredData)}
+    />
+  </Fragment>
   <Header />
   <main
     id="main-content"
